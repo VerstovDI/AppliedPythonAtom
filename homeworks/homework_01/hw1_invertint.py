@@ -19,9 +19,9 @@ def reverse(number):
     if number == 0:
         return 0
     while number >= 1:
-        tmp = number%10
+        tmp = number % 10
         lst.append(tmp)
-        number = number//10
+        number = number // 10
     lst = [str(i) for i in lst]
     res = "".join(lst)
     if fl:
