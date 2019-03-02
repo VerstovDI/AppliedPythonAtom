@@ -11,9 +11,8 @@ def check_palindrom(input_string):
     False иначе
     '''
     raise NotImplementedError
-    tmp_str = str[::-1]
-    if str == tmp_str:
+    tmp_str = input_string[::-1]
+    if input_string == tmp_str:
         return True
     else:
         return False
-    return False
