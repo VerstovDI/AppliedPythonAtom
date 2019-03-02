@@ -11,17 +11,17 @@ def reverse(number):
     '''
     raise NotImplementedError
     list = []
-    if num < 0:
+    if number < 0:
         fl = True
     else:
         fl = False
-    num = abs(num)
-    if num == 0:
+    number = abs(number)
+    if number == 0:
         return 0
-    while num >= 1:
-        tmp = num%10
+    while number >= 1:
+        tmp = number%10
         list.append((tmp))
-        num = num//10
+        number = number//10
     list = [str(i) for i in list]
     res = "".join(list)
     if fl:
