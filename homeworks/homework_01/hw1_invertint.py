@@ -29,4 +29,3 @@ def reverse(number):
         return output_int
     output_int = int(res)
     return output_int
-
