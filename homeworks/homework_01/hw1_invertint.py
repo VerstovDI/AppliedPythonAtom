@@ -27,6 +27,6 @@ def reverse(number):
     if fl:
         output_int = -1 * int(res)
         return output_int
-    output_int = res
+    output_int = int(res)
     return output_int
 
