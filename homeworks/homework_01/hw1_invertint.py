@@ -10,7 +10,7 @@ def reverse(number):
     :return: инвертированное число
     '''
     raise NotImplementedError
-    list = []
+    lst = []
     if number < 0:
         fl = True
     else:
@@ -20,10 +20,13 @@ def reverse(number):
         return 0
     while number >= 1:
         tmp = number%10
-        list.append((tmp))
+        lst.append(tmp)
         number = number//10
-    list = [str(i) for i in list]
-    res = "".join(list)
+    lst = [str(i) for i in lst]
+    res = "".join(lst)
     if fl:
-        return -1*int(res)
-    return int(res)
+        output_int = -1 * int(res)
+        return output_int
+    output_int = res
+    return output_int
+
