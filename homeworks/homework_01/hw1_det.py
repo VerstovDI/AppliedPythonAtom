@@ -56,7 +56,11 @@ def calculate_determinant(list_of_lists):
 
             if list_of_lists[i][i] != 0:
                 for j in range(i + 1, size):
-                    coeff = -list_of_lists[j][i] / list_of_lists[i][i]
+                    if isinstance(list_of_lists[j][k], (float, int)) \
+                            and isinstance(list_of_lists[i][i], (float, int)):
+                        coeff = -list_of_lists[j][i] / list_of_lists[i][i]
+                    else:
+                        return None
                     for k in range(size - 1, i - 1, -1):
                         list_of_lists[j][k] += list_of_lists[i][k] * coeff
 
