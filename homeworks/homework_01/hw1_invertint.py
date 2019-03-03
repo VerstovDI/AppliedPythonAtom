@@ -9,7 +9,6 @@ def reverse(number):
     :param number: исходное число
     :return: инвертированное число
     '''
-    raise NotImplementedError
     lst = []
     if number < 0:
         fl = True
@@ -29,3 +28,4 @@ def reverse(number):
         return output_int
     output_int = int(res)
     return output_int
+    raise NotImplementedError
