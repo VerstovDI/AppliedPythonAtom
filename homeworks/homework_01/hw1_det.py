@@ -19,10 +19,10 @@ def calculate_determinant(list_of_lists):
     t = 0
     if not isinstance(list_of_lists[t], list):
         return None
-    else:
-        for t in range(len(list_of_lists[t])):
-            if len(list_of_lists[t]) != len(list_of_lists):
-                return None
+
+    for t in range(len(list_of_lists[t])):
+        if len(list_of_lists[t]) != len(list_of_lists):
+            return None
 
     swap_cnt = 1
     for i in range(0, size):
