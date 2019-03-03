@@ -49,20 +49,24 @@ def calculate_determinant(list_of_lists):
                     list_of_lists[i][k] = list_of_lists[supp_ind][k]
                     list_of_lists[supp_ind][k] = buf
                 if i != supp_ind:
-                    swap_cnt = - swap_cnt * 1
+                    swap_cnt = -swap_cnt * 1
 
                 else:
-                    swap_cnt = - swap_cnt * -1
+                    swap_cnt = -swap_cnt * (-1)
 
             if list_of_lists[i][i] != 0:
                 for j in range(i + 1, size):
                     if isinstance(list_of_lists[j][k], (float, int)) \
                             and isinstance(list_of_lists[i][i], (float, int)):
-                        coeff = -list_of_lists[j][i] / list_of_lists[i][i]
+                        c = -list_of_lists[j][i] / list_of_lists[i][i]
                     else:
                         return None
                     for k in range(size - 1, i - 1, -1):
-                        list_of_lists[j][k] += list_of_lists[i][k] * coeff
+                        if isinstance(list_of_lists[j][k], (float, int)) \
+                                and isinstance(list_of_lists[i][k], (float, int)):
+                            list_of_lists[j][k] += list_of_lists[i][k] * c
+                        else:
+                            return None
 
     res = 1
     for i in range(0, size):
