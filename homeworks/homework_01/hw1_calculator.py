@@ -10,13 +10,13 @@ def calculator(x, y, operator):
     :param operator: 4 оператора: plus, minus, mult, divide
     :return: результат операции или None, если операция не выполнима
     '''
-    raise NotImplementedError
     if operator == "plus":
-        return obj_1+obj_2
+        return x + y
     if operator == "minus":
-        return obj_1-obj_2
+        return x - y
     if operator == "mult":
-        return obj_1*obj_2
+        return x * y
     if operator == "divide":
-        return obj_1/obj_2 if obj_2 != 0 else None
+        return x / y if y != 0 else None
     return None
+    raise NotImplementedError
