@@ -23,6 +23,9 @@ def calculate_determinant(list_of_lists):
     if not isinstance(list_of_lists[t], list):
         return None
 
+    if not list_of_lists[0]:
+        return None
+
     for t in range(len(list_of_lists[t])):
         if len(list_of_lists[t]) != len(list_of_lists):
             return None
