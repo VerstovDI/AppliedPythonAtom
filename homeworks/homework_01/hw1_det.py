@@ -10,28 +10,25 @@ def calculate_determinant(list_of_lists):
     Гарантируется, что в матрице float
     :param list_of_lists: список списков - исходная матрица
     :return: значение определителя или None
-    '''
+    '''    
     size = len(list_of_lists)
 
-    if len(list_of_lists) <= 1:
+    if size <= 0 or not list_of_lists[0]:
         return None
+    if size == 1:
+        if isinstance(list_of_lists[0], list):
+            return None
+        else:
+            return list_of_lists[0]
 
-    global i
     global t
     t = 0
-
-    if not isinstance(list_of_lists[t], list):
-        return None
-
-    if not list_of_lists[0]:
-        return None
-
     for t in range(len(list_of_lists[t])):
         if len(list_of_lists[t]) != len(list_of_lists):
             return None
 
+    global i
     swap_cnt = 1
-
     for i in range(0, size):
         global j
         global k
@@ -42,10 +39,8 @@ def calculate_determinant(list_of_lists):
             if abs(list_of_lists[j][i]) > abs(list_of_lists[supp_ind][i]):
                 supp_ind = j
                 fl = True
-
             else:
                 fl = False
-
             if fl:
                 for k in range(0, size):
                     buf = list_of_lists[i][k]
@@ -59,24 +54,13 @@ def calculate_determinant(list_of_lists):
 
             if list_of_lists[i][i] != 0:
                 for j in range(i + 1, size):
-                    if isinstance(list_of_lists[j][k], (float, int)) \
-                            and isinstance(list_of_lists[i][i], (float, int)):
-                        c = -list_of_lists[j][i] / list_of_lists[i][i]
-                    else:
-                        return None
+                    c = -list_of_lists[j][i] / list_of_lists[i][i]
                     for k in range(size - 1, i - 1, -1):
-                        if isinstance(list_of_lists[j][k], (float, int)) \
-                                and isinstance(list_of_lists[i][k], (float, int)):
-                            list_of_lists[j][k] += list_of_lists[i][k] * c
-                        else:
-                            return None
+                        list_of_lists[j][k] += list_of_lists[i][k] * c
 
     res = 1
     for i in range(0, size):
         res *= list_of_lists[i][i]
 
-    if isinstance(res * swap_cnt, (float, int)):
-        return res * swap_cnt
-    else:
-        return None
+    return res * swap_cnt
     raise NotImplementedError
