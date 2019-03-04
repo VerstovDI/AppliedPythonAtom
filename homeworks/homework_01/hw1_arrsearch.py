@@ -32,4 +32,5 @@ def find_indices(input_list, n):
             return tuple([t, temp])
         t += 1
     return None
+
     raise NotImplementedError
