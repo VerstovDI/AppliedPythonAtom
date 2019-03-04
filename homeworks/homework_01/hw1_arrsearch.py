@@ -22,7 +22,7 @@ def find_indices(input_list, n):
        2) Будем проходить массив и оценивать n - input_list[i]
     """
     buf_d = {}  # Создаём пустой словарь
-    for cnt in range(0, len(input_list)):  # Перегоняем массив в словарь поиндексно
+    for cnt in range(0, len(input_list)):  # Перегоняем в словарь поиндексно
         buf_d[input_list[cnt]] = cnt  # Ключ - число, значение - индекс
 
     t = 0
