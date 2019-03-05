@@ -25,18 +25,22 @@ def is_bracket_correct(input_string):
         if item == '(':
             cnt_1 += 1
             fl_1 = True  # Флаг поднят. Встречена открывающая скобка
+            continue
         elif item == '[':
             cnt_2 += 1
             fl_2 = True  # Далее аналогично
+            continue
         elif item == '{':
             cnt_3 += 1
             fl_3 = True
+            continue
 
         if item == ')':
             if cnt_1 == 0:
                 return False
             if fl_1:
                 cnt_1 -= 1
+                continue
             else:
                 return False
 
@@ -45,6 +49,7 @@ def is_bracket_correct(input_string):
                 return False
             if fl_2:
                 cnt_2 -= 1
+                continue
             else:
                 return False
 
@@ -53,6 +58,7 @@ def is_bracket_correct(input_string):
                 return False
             if fl_3:
                 cnt_3 -= 1
+                continue
             else:
                 return False
 
@@ -60,5 +66,3 @@ def is_bracket_correct(input_string):
         return False
     else:
         return True
-
-    return False
