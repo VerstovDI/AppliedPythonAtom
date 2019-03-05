@@ -3,28 +3,19 @@
 
 
 def calculate_determinant(list_of_lists):
+  
     size = len(list_of_lists)
 
     if size <= 0 or not list_of_lists[0]:
         return None
-    if size == 1:
-        if isinstance(list_of_lists[0], list):
-            return None
-        else:
-            return list_of_lists[0]
 
-    global t
     t = 0
     for t in range(len(list_of_lists[t])):
         if len(list_of_lists[t]) != len(list_of_lists):
             return None
 
-    global i
     swap_cnt = 1
     for i in range(0, size):
-        global j
-        global k
-        global supp_ind
         supp_ind = i
         for j in range(i + 1, size):
 
@@ -55,3 +46,4 @@ def calculate_determinant(list_of_lists):
         res *= list_of_lists[i][i]
 
     return res * swap_cnt
+
