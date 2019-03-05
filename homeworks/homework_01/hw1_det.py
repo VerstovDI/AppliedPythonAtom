@@ -3,7 +3,6 @@
 
 
 def calculate_determinant(list_of_lists):
-  
     size = len(list_of_lists)
 
     if size <= 0 or not list_of_lists[0]:
@@ -46,4 +45,3 @@ def calculate_determinant(list_of_lists):
         res *= list_of_lists[i][i]
 
     return res * swap_cnt
-
