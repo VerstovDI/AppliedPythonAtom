@@ -3,14 +3,6 @@
 
 
 def calculate_determinant(list_of_lists):
-    '''
-    Метод, считающий детерминант входной матрицы,
-    если это возможно, если невозможно, то возвращается
-    None
-    Гарантируется, что в матрице float
-    :param list_of_lists: список списков - исходная матрица
-    :return: значение определителя или None
-    '''    
     size = len(list_of_lists)
 
     if size <= 0 or not list_of_lists[0]:
@@ -63,4 +55,3 @@ def calculate_determinant(list_of_lists):
         res *= list_of_lists[i][i]
 
     return res * swap_cnt
-    raise NotImplementedError
