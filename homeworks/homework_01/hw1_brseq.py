@@ -10,55 +10,23 @@ def is_bracket_correct(input_string):
     :param input_string: строка, содержащая 6 типов скобок (,),[,],{,}
     :return: True or False
     '''
-    cnt_1 = 0  # Счётчик числа скобок типа '( - )'
-    cnt_2 = 0  # Счётчик числа скобок типа '[ - ]'
-    cnt_3 = 0  # Счётчик числа скобок типа '{ - }'
-    fl_1 = False  # Флаги (cм. далее назначение)
-    fl_2 = False
-    fl_3 = False
-
-    for item in input_string:
-        if item == '(':
-            cnt_1 += 1
-            fl_1 = True  # Флаг поднят. Встречена открывающая скобка
-            continue
-        elif item == '[':
-            cnt_2 += 1
-            fl_2 = True  # Далее аналогично
-            continue
-        elif item == '{':
-            cnt_3 += 1
-            fl_3 = True
-            continue
-
-        if item == ')':
-            if cnt_1 == 0:
-                return False
-            if fl_1:
-                cnt_1 -= 1
-                continue
-            else:
-                return False
-
-        if item == ']':
-            if cnt_2 == 0:
-                return False
-            if fl_2:
-                cnt_2 -= 1
-                continue
-            else:
-                return False
-
-        if item == '}':
-            if cnt_3 == 0:
-                return False
-            if fl_3:
-                cnt_3 -= 1
-                continue
-            else:
-                return False
-
-    if cnt_1 % 2 != 0 or cnt_2 % 2 != 0 or cnt_3 % 2 != 0:
+    s_len = len(input_string)
+    if s_len % 2 != 0:  # Если кол-во нечётн. - заведомо False
         return False
-    else:
+    if s_len == 0:  # Если длина строк == 0 ('') - заведомо True
         return True
+
+    if '()' in input_string:
+        fl_1 = is_bracket_correct(input_string.replace('()', ''))
+        return fl_1
+
+    if '[]' in input_string:
+        fl_2 = is_bracket_correct(input_string.replace('[]', ''))
+        return fl_2
+
+    if '{}' in input_string:
+        fl_3 = is_bracket_correct(input_string.replace('{}', ''))
+        return fl_3
+
+    return False
+    return NotImplementedError
