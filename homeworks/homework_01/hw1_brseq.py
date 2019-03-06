@@ -10,10 +10,6 @@ def is_bracket_correct(input_string):
     :param input_string: строка, содержащая 6 типов скобок (,),[,],{,}
     :return: True or False
     '''
-    length = len(input_string)
-    if length % 2 != 0:
-        return False
-
     cnt_1 = 0  # Счётчик числа скобок типа '( - )'
     cnt_2 = 0  # Счётчик числа скобок типа '[ - ]'
     cnt_3 = 0  # Счётчик числа скобок типа '{ - }'
