@@ -69,7 +69,8 @@ class VKPoster:
                 frequency.update({j: cnt})
 
         tmp_list = list(frequency.items())
-        tmp_list = sorted(tmp_list, key = lambda tup: (tup[1], tup[0]), reverse=True)
+        tmp_list = \
+            sorted(tmp_list, key=lambda tup: (tup[1], tup[0]), reverse=True)
         tmp_list = [x[0] for x in tmp_list]
         output_list = tmp_list[:k]
         return output_list
