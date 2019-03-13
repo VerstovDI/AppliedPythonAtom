@@ -7,7 +7,7 @@ class Heap():
     def __init__(self, array):
         self.heaplist = array[::]
         self.build_heap()
-    
+
     # Ф-ии heapify и sift_up - восстанавливают св-ва кучи
     def heapify(self, i):  # Он же - Sift Down
         l, r = 2 * i + 1, 2 * i + 2  # Левый и правый сыновья соответственно
@@ -22,7 +22,7 @@ class Heap():
                 comparator_d(self.heaplist[r], self.heaplist[largest]):
             largest = r
 
-        if largest != i:  # Проталкиваем в корень большего сына, если он есть  
+        if largest != i:  # Проталкиваем в корень большего сына, если он есть
             self.heaplist[i], self.heaplist[largest] = \
                 self.heaplist[largest], self.heaplist[i]
             self.heapify(largest)
@@ -60,6 +60,7 @@ class MaxHeap(Heap):  # Потомок класса Heap
             max = self.heaplist.pop(0)
             self.build_heap()
             return max
+
 
 # Вспомогательные ф-ии (приведены ниже)
 def comparator_d(x, y):
