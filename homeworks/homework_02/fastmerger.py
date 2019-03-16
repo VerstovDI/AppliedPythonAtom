@@ -4,7 +4,9 @@
 from .heap import MaxHeap
 import copy
 
+
 class FastSortedListMerger:
+
 
     @staticmethod
     def merge_first_k(list_of_lists, k):
@@ -46,11 +48,11 @@ class FastSortedListMerger:
                     tuple_element = (buf_list[index].pop(), index)
                     tuples_heap.add(tuple_element)
         """
-        Поскольку глубина кучи = O(log p), 
+        Поскольку глубина кучи = O(log p),
         где p - кол-во эл-ов, то в данном случае
-        временная сложность составит 
+        временная сложность составит
         как раз k прохождений циклов по O(log k), т.е.
-        O" = k*O(log k). 
+        O" = k*O(log k).
         Т.о., в итоге O = O' + O" = O(N + k*log k), что и требовалось.
         """
         return output_list
