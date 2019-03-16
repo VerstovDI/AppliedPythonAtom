@@ -3,24 +3,17 @@
 
 
 def groupping_anagramms(words):
-    """
-    Функция, которая группирует анаграммы.
-    Возвращаем массив, где элементом является массив с анаграмами.
-    Пример:  '''Аз есмь строка живу я мерой остр
-                За семь морей ростка я вижу рост
-                Я в мире сирота
-                Я в Риме Ариост'''.split()
-                ->
-                [
-                 ['Аз'], ['есмь', 'семь'],
-                 ['строка', 'ростка'], ['живу', 'вижу'],
-                 ['я', 'я'], ['мерой', 'морей'],
-                 ['остр)'], ['За'], ['рост'], ['Я', 'Я'],
-                 ['в', 'в'], ['мире'], ['сирота'],
-                 ['Риме'], ['Ариост']
-                ]
-    :param words: list of words (words in str format)
-    :return: list of lists of words
-    """
-    # TODO: реализовать функцию
-    raise NotImplementedError
+    words_dict = dict()
+    res_list = []
+    for word in words:
+        tmp = ''.join(sorted(word.lower()))
+        if tmp in words_dict:
+            words_dict.setdefault(tmp, [])
+            words_dict[tmp].append(word)
+        else:
+            words_dict[tmp] = [word]
+
+    for key, value in words_dict.items():
+        if len(value) > 1:
+            res_list.append(value)
+    return res_list
