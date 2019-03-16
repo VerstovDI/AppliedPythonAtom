@@ -7,7 +7,6 @@ import copy
 
 class FastSortedListMerger:
 
-
     @staticmethod
     def merge_first_k(list_of_lists, k):
         '''
@@ -26,7 +25,7 @@ class FastSortedListMerger:
         """
         Пройдём все элементы (N списков в списке), и воспользуемся тем,
         что он отсортирован: достанем последний элемент - самый большой.
-        Временная сложность на данном этапе - O'(N). 
+        Временная сложность на данном этапе - O'(N).
         Запишем кортежи в список для кучи.
         """
         for i, item in enumerate(buf_list):
@@ -37,7 +36,7 @@ class FastSortedListMerger:
                 heap_list.append(heap_tuple)
         # Создаём кучу tuples_heap из списка для кучи
         tuples_heap = MaxHeap(heap_list)
-        for cnt in range(0, k):   
+        for cnt in range(0, k):
             if tuples_heap.heaplist:
                 # Извлекаем максимальный элемент кучи, записываем в
                 # value значение элемента, в index - номер списка
