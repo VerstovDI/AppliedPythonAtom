@@ -50,6 +50,5 @@ class KNNRegressor:
             q = 1/dist[idx]  # Взвешенный способ
             prediction = np.average(self._y[idx], weights=q)
             y.append(prediction)
-        self.is_fitted = True
         return y
 
