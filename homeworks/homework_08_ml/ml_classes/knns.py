@@ -52,3 +52,4 @@ class KNNRegressor:
             y.append(prediction)
         self.is_fitted = True
         return y
+
