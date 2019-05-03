@@ -43,11 +43,11 @@ class KNNRegressor:
         for curr in X_norm:
             # Посчитаем расстояние от всех элементов в тренировочной выборке
             # до текущего примера -> результат - вектор размерности трейна
-            dist = np.sum(np.sqrt((self._X - curr)**2, axis=1))
+            dist = np.sum(np.sqrt((self._X - curr) ** 2, axis=1))
             # Возьмем индексы n элементов, расстояние до которых минимально
             # результат -> вектор из n элементов
             idx = np.argsort(dist)[:self._n]
-            q = 1/dist[idx]  # Взвешенный способ
+            q = 1 / dist[idx]  # Взвешенный способ
             prediction = np.average(self._y[idx], weights=q)
             y.append(prediction)
         return y
