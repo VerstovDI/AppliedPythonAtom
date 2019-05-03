@@ -51,4 +51,3 @@ class KNNRegressor:
             prediction = np.average(self._y[idx], weights=q)
             y.append(prediction)
         return y
-
